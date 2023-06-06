@@ -33,7 +33,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   desafio_indicium:
-    # Config indicated by + and applies to all files under models/example/
+    vendas:
+      +persist_docs:
+        relation: true
+        columns: true
+      +schema: vendas
+      staging: 
+        +materialized: view
+      marts:
+        +materialized: table
 
 seeds:
   desafio_indicium:
