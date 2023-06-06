@@ -34,3 +34,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   desafio_indicium:
     # Config indicated by + and applies to all files under models/example/
+
+seeds:
+  desafio_indicium:
+    contabilidade:
+      +schema: seed_contabilidade
+    crm:
+      +schema: seed_crm
+    erp:
+      +schema: seed_erp
+      
