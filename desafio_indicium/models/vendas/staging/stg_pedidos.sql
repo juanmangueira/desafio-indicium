@@ -5,7 +5,7 @@ SELECT DISTINCT
     order_date AS pedido_data,
     required_date AS prazo_data,
     shipped_date AS envio_data,
-    ship_via AS enviado_via,
+    CAST(ship_via AS string) AS enviado_via,
     freight AS frete,
     ship_name AS transporte_nome,
     ship_address AS transporte_endereco,
