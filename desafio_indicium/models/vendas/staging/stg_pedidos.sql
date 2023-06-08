@@ -1,7 +1,7 @@
 SELECT DISTINCT
-    order_id AS pedido_id,
-    customer_id AS cliente_id,
-    employee_id AS funcionario_id,
+    CAST(order_id AS string) AS pedido_id,
+    CAST(customer_id AS string) AS cliente_id,
+    CAST(employee_id AS string) AS funcionario_id,
     order_date AS pedido_data,
     required_date AS prazo_data,
     shipped_date AS envio_data,
