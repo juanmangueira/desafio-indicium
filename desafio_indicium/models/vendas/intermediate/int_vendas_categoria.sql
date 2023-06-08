@@ -1,5 +1,8 @@
 SELECT
     pr.categoria_id,
+    vp.pedido_id,
+    vp.cliente_id,
+    vp.produto_id,
     vp.mes,
     vp.ano,
     ROUND(SUM(vp.valor_total_produto),2) AS valor_total_categoria,
@@ -13,4 +16,7 @@ ON
 GROUP BY
     pr.categoria_id,
     vp.mes,
-    vp.ano
+    vp.ano,
+    vp.pedido_id,
+    vp.cliente_id,
+    vp.produto_id

@@ -1,5 +1,8 @@
 SELECT
     vc.categoria_id,
+    vc.pedido_id,
+    vc.cliente_id,
+    vc.produto_id,
     ca.categoria_nome,
     vc.mes,
     vc.ano,

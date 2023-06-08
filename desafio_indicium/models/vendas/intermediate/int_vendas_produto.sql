@@ -1,5 +1,7 @@
 SELECT
     pd.produto_id,
+    pd.pedido_id,
+    p.cliente_id,
     EXTRACT(MONTH FROM p.pedido_data) AS mes,
     EXTRACT(YEAR FROM p.pedido_data) AS ano,
     SUM(pd.quantidade) AS quantidade_total_produto,
@@ -10,4 +12,4 @@ INNER JOIN
     {{ref('stg_pedidos')}} AS p
 ON
     pd.pedido_id = p.pedido_id
-GROUP BY produto_id, mes, ano
+GROUP BY produto_id, mes, ano, pedido_id, cliente_id
